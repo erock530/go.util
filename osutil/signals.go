@@ -7,7 +7,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/Novetta/go.logging/v2"
+	"github.com/erock530/go.logging"
 )
 
 // List of functions to call before exiting

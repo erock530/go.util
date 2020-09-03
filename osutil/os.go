@@ -8,7 +8,7 @@ import (
 	"os/exec"
 	"time"
 
-	"github.com/Novetta/go.logging/v2"
+	"github.com/erock530/go.logging"
 )
 
 // GetSetEnv Gets and potentially sets environment variable to the fallback value.
