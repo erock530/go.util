@@ -1,0 +1,56 @@
+#!/bin/bash
+# This script takes a RPM spect file with the template {{RELEASE}} which will
+# be filled with a number representing the number of successful build
+set -e
+set -x
+
+THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+if [[ $# -lt 1 ]]; then
+    echo "Must specify a filename!"
+    exit 1;
+fi
+
+FULLPATH=$(readlink -f $1)
+BASENAME=$(basename ${FULLPATH})
+DIRNAME=$(dirname ${FULLPATH})
+FILENAME="${BASENAME%.*}"
+FULLBASE="${FULLPATH%.*}"
+echo "Base Name is: " $BASENAME
+# Check for a .spect file as input.
+if [ "${BASENAME##*.}" != "spect" ]; then
+    echo "Must give a spec template .spect file!"
+    exit 1;
+fi
+
+cleanup() {
+    rm -f "$NEW_SPECT_FILE"
+    rm -f "${DIRNAME}/version.env"
+}
+
+trap 'cleanup' SIGINT SIGTERM EXIT
+
+${THIS_DIR}/version.sh $1 > ${DIRNAME}/version.env
+cat ${DIRNAME}/version.env
+export $(cat ${DIRNAME}/version.env | xargs)
+
+# Create temporary .spect file where we'll increment the release number
+NEW_SPECT_FILE="$FULLBASE.spec"
+sed "s/Version:\ [0-9\.]*/Version:\ ${VERSION}/" ${FULLPATH} > "$NEW_SPECT_FILE"
+sed -i "s/{{RELEASE}}/${RELEASE}/" "$NEW_SPECT_FILE"
+
+basecmd="setsid rpmbuild -v -bb"
+
+# Create the RPM.
+echo "Building $FILENAME version ${VERSION} release $RELEASE"
+if [[ $# -gt 2 ]]; then
+	args=("$@")
+	rest_args=("${args[@]:1}")
+	basecmd=($basecmd "${rest_args[@]}" ${NEW_SPECT_FILE})
+else
+	basecmd=($basecmd ${NEW_SPECT_FILE})
+fi
+
+"${basecmd[@]}" < /dev/null
+
+exit 0

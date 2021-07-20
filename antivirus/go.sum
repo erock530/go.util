@@ -1,0 +1,4 @@
+github.com/erock530/go.logging/v2 v2.0.3 h1:q6/ZNCl0SG0GGGruCCQdRGa3RE17XCdE18D+0Oof7rM=
+github.com/erock530/go.logging/v2 v2.0.3/go.mod h1:Zk+PabXVH2j0ewROHzCg24hx+qWXcSG/6qT2bLDsW2s=
+github.com/erock530/go.util/osutil/v2 v2.0.0 h1:/4jKh+C3WRAa8P+mrsAguw4COf0zEVxZ8QKDFWXzETI=
+github.com/erock530/go.util/osutil/v2 v2.0.0/go.mod h1:3h48prMODHJ8BQc0B2lVKrwV2yzmwTV7Pd8WaAp/qng=
