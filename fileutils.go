@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/erock530/go.util/v4/fileutil"
-	"github.com/erock530/go.util/v4/osutil"
+	"github.com/erock530/go.util/fileutil"
+	"github.com/erock530/go.util/osutil"
 )
 
 //ReadSeekCloser interface for holding file io handles
