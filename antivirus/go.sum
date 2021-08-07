@@ -1,4 +1,6 @@
-github.com/erock530/go.logging/v2 v2.0.3 h1:q6/ZNCl0SG0GGGruCCQdRGa3RE17XCdE18D+0Oof7rM=
-github.com/erock530/go.logging/v2 v2.0.3/go.mod h1:Zk+PabXVH2j0ewROHzCg24hx+qWXcSG/6qT2bLDsW2s=
-github.com/erock530/go.util/osutil/v2 v2.0.0 h1:/4jKh+C3WRAa8P+mrsAguw4COf0zEVxZ8QKDFWXzETI=
-github.com/erock530/go.util/osutil/v2 v2.0.0/go.mod h1:3h48prMODHJ8BQc0B2lVKrwV2yzmwTV7Pd8WaAp/qng=
+github.com/erock530/go.logging v0.0.0-20200903055250-54eee61dc3b4 h1:jzhWZ62Eoz8gEKso8N8f5yGhTnp5701P0sEXw/aDBi8=
+github.com/erock530/go.logging v0.0.0-20200903055250-54eee61dc3b4/go.mod h1:GFnpv8gwcHTu98vteXjxWR1y2ZIE+ZYaQRCDoI7soeE=
+github.com/erock530/go.util v0.0.0-20210807055544-615495482dc5 h1:D5VkIOYt9UBQZT9q9H88F32Pq0FBi+hRhEHV2wLAQd4=
+github.com/erock530/go.util v0.0.0-20210807055544-615495482dc5/go.mod h1:gVG5IViS9FypmBodY12IhgTm8fZIresQbkZ3QtiaQgk=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
+gopkg.in/yaml.v2 v2.4.0/go.mod h1:RDklbk79AGWmwhnvt/jBztapEOGDOx6ZbXqjP6csGnQ=
