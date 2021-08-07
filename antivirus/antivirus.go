@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"strconv"
 
-	logging "github.com/erock530/go.logging/v2"
-	"github.com/erock530/go.util/osutil/v2"
+	logging "github.com/erock530/go.logging"
+	"github.com/erock530/go.util/osutil"
 )
 
 const (

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/erock530/go.util/osutil/v2"
+	"github.com/erock530/go.util/osutil"
 )
 
 //Uvscanner is the Mcafee antivirus CLI
